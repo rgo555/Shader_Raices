@@ -61,20 +61,20 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
-    - _Clip: 0
+    - _Clip: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Grow: 0
-    - _Metallic: -0.06
+    - _Grow: 1
+    - _Metallic: -1.22
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Scale: 4.25
-    - _Smoothness: 0
+    - _Scale: 0
+    - _Smoothness: -6.82
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
