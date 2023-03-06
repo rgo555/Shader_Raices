@@ -5,12 +5,12 @@ using UnityEngine;
 public class GrowVine : MonoBehaviour
 {
     public List<MeshRenderer> growVinesMeshes;
-    public float timeToGrow = 5;
-    public float refreshRate = 0.05f;
+    public float timeToGrow;
+    public float refreshRate;
     [Range(0,1)]
-    public float miniGrow = 0.2f;
+    public float miniGrow;
     [Range(0,1)]
-    public float maxGrow = 0.97f;
+    public float maxGrow;
 
     private List<Material> growVinesMaterials = new List<Material>();
     private bool fullyGrow;
