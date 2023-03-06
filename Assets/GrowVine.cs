@@ -5,15 +5,15 @@ using UnityEngine;
 public class GrowVine : MonoBehaviour
 {
     public List<MeshRenderer> growVinesMeshes;
-    public float timwtoGrow = 5;
+    public float timeToGrow = 5;
     public float refreshRate = 0.05f;
-    [Range(0.1)]
-    public float minGorw = 0.2;
+    [Range(0,1)]
+    public float miniGrow = 0.2f;
     [Range(0,1)]
     public float maxGrow = 0.97f;
 
     private List<Material> growVinesMaterials = new List<Material>();
-    private bool fullyGrown;
+    private bool fullyGrow;
 
     void Start()
     {
@@ -45,11 +45,11 @@ public class GrowVine : MonoBehaviour
     {
         float growValue = mat.GetFloat("Grow_");
 
-        if(!fullyGrown)
+        if(!fullyGrow)
         {
-            while(grownValue < maxGrow)
+            while(growValue < maxGrow)
             {
-                grownValue += 1/(timeToGrow/refreshRate);
+                growValue += 1/(timeToGrow/refreshRate);
                 mat.SetFloat("Grow_", growValue);
 
                 yield return new WaitForSeconds(refreshRate);
@@ -57,18 +57,18 @@ public class GrowVine : MonoBehaviour
         }
         else
         {
-            while(grownValue > minGrow)
+            while(growValue > miniGrow)
             {
-                grownValue -= 1/(timeToGrow/refreshRate);
+                growValue -= 1/(timeToGrow/refreshRate);
                 mat.SetFloat("Grow_", growValue);
 
                 yield return new WaitForSeconds(refreshRate);
             }
         }
 
-        if(growValues >= maxGrow)
-            fullyGrown = true;
+        if(growValue >= maxGrow)
+            fullyGrow = true;
         else
-            fullyGrown = false;
+            fullyGrow = false;
     }
 }
